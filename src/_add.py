@@ -28,6 +28,8 @@ class Window(Form, Base):
         self.browseButton.clicked.connect(self.setPath)
         self.addButton.clicked.connect(self.addProfile)
         
+        appUsageApp.updateDatabase('addIESProfile')
+        
     def setPath(self):
         filename = QFileDialog.getOpenFileName(self, 'Select File',
                                                '', '*.ies')
